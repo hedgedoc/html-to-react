@@ -11,7 +11,7 @@ A utility for converting HTML strings into [React](https://facebook.github.io/re
 This library is a hard fork of https://github.com/peternewnham/react-html-parser. It has some improvements and is converted to typescript.
 
 [![npm](https://img.shields.io/npm/v/@hedgedoc/html-to-react.svg)](https://www.npmjs.com/package/@hedgedoc/html-to-react)
-[![Downloads](https://img.shields.io/npm/dw/react-html-parser.svg)](https://www.npmjs.com/package/@hedgedoc/html-to-react)
+[![Downloads](https://img.shields.io/npm/dw/@hedgedoc/html-to-react.svg)](https://www.npmjs.com/package/@hedgedoc/html-to-react)
 
 ## Install
 

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "declaration": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": "./src/",
+    "allowJs": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"]
+}

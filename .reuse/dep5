@@ -1,0 +1,5 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: html-to-react
+Upstream-Contact: The HedgeDoc developers <license@hedgedoc.org>
+Source: https://github.com/hedgedoc/html-to-react
+

@@ -1,0 +1,81 @@
+{
+  "name": "@hedgedoc/html-to-react",
+  "version": "1.0.0",
+  "description": "Parse HTML into React components",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "prepublishOnly": "yarn format && yarn test && yarn build",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier -c \"{src,test}/**/*.{ts,tsx,js}\"",
+    "format:fix": "prettier -w \"{src,test}/**/*.{ts,tsx,js}\""
+  },
+  "files": [
+    "LICENSES/*",
+    "package.json",
+    "README.md",
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hedgedoc/html-to-react.git"
+  },
+  "keywords": [
+    "react",
+    "html",
+    "htmlparser",
+    "htmlparser2",
+    "inner html",
+    "dangerouslySetInnerHTML"
+  ],
+  "author": "The HedgeDoc Authors",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/react-dom": "^17.0.7",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.0.0",
+    "prettier": "^2.3.1",
+    "ts-jest": "^27.0.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.11",
+    "htmlparser2": "^6.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "prettier": {
+    "parser": "typescript",
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "semi": false,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "arrowParens": "always"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "testPathIgnorePatterns": [
+      "/dist/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}

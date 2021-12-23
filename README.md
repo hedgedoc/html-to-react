@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # HTML to React
 
-A utility for converting HTML strings into [React](https://facebook.github.io/react/) components. Converts standard HTML elements, attributes and inline styles into their React equivalents and provides a simple way to modify and replace the content.
+This is a library that renders HTML strings into [React](https://facebook.github.io/react/) components without using `dangerouslySetInnerHTML`. Converts standard HTML elements, attributes and inline styles into their React equivalents and provides a simple way to modify and replace the content.
 
 This library is a hard fork of https://github.com/peternewnham/react-html-parser. It has some improvements and is converted to typescript.
 
@@ -16,16 +16,16 @@ This library is a hard fork of https://github.com/peternewnham/react-html-parser
 ## Install
 
 ```bash
-npm install react-html-parser
+npm install @hedgedoc/html-to-react
 # or
-yarn add react-html-parser
+yarn add @hedgedoc/html-to-react
 ```
 
 ## Usage
 
 ```javascript
 import React from 'react';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import convertHtmlToReact from '@hedgedoc/html-to-react';
 
 class HtmlComponent extends React.Component {
   render() {
@@ -55,12 +55,12 @@ Additionally, HTML sanitization is a hard thing to get right and even the most p
 
 ## API
 
-### `function ReactHtmlParser(html, [options])`
+### `function convertHtmlToReact(html, [options])`
 Takes an HTML string and returns equivalent React elements
 
 #### Usage
 ```js
-import ReactHtmlParser from 'react-html-parser';
+import convertHtmlToReact from '@hedgedoc/html-to-react';
 ```
 #### Arguments
 - `html`: The HTML string to parse
@@ -124,7 +124,7 @@ Processes a node and returns the React element to be rendered. This function can
 
 #### Usage
 ```js
-import { convertNodeToElement } from 'react-html-parser';
+import { convertNodeToElement } from '@hedgedoc/html-to-react';
 ```
 #### Arguments
 - `node`: The node to process
@@ -132,7 +132,7 @@ import { convertNodeToElement } from 'react-html-parser';
 - `transform`: The transform function as described above
 
 ```js
-import { convertNodeToElement } from 'react-html-parser';
+import { convertNodeToElement } from '@hedgedoc/html-to-react';
 function transform(node, index) {
   // convert <ul> to <ol>
   if (node.type === 'tag' && node.name === 'ul') {

@@ -119,12 +119,12 @@ Allows pre-processing the nodes generated from the html by `htmlparser2` before 
 ##### Return type
 The `preprocessNodes` function should return a valid `htmlparser2` node tree.
 
-### `function convertNodeToElement(node, index, transform)`
+### `function convertNodeToReactElement(node, index, transform)`
 Processes a node and returns the React element to be rendered. This function can be used in conjunction with the previously described `transform` function to continue to process a node after modifying it.
 
 #### Usage
 ```js
-import { convertNodeToElement } from '@hedgedoc/html-to-react';
+import { convertNodeToReactElement } from '@hedgedoc/html-to-react';
 ```
 #### Arguments
 - `node`: The node to process
@@ -132,12 +132,12 @@ import { convertNodeToElement } from '@hedgedoc/html-to-react';
 - `transform`: The transform function as described above
 
 ```js
-import { convertNodeToElement } from '@hedgedoc/html-to-react';
+import { convertNodeToReactElement } from '@hedgedoc/html-to-react';
 function transform(node, index) {
   // convert <ul> to <ol>
   if (node.type === 'tag' && node.name === 'ul') {
     node.name = 'ol';
-    return convertNodeToElement(node, index, transform);
+    return convertNodeToReactElement(node, index, transform);
   }
 }
 ```

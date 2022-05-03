@@ -46,7 +46,7 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
-    "htmlparser2": "^7.0.0",
+    "htmlparser2": "^8.0.0",
     "react": "^17.0.2 || ^18.0",
     "react-dom": "^17.0.2 || ^18.0"
   },

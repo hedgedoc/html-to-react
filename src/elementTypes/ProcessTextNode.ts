@@ -5,7 +5,7 @@
  */
 
 import { Node } from 'domhandler'
-import { isText } from 'domhandler/lib/node'
+import { isText } from 'domhandler'
 
 /**
  * Converts a text node to a React text element

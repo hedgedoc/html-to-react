@@ -9,7 +9,7 @@ import { convertHtmlToReact, ParserOptions } from '../../src/convertHtmlToReact'
 import { convertNodeToReactElement } from '../../src/convertNodeToReactElement'
 import { Document, isTag } from 'domhandler'
 import { NodeToReactElementTransformer } from '../../src/NodeToReactElementTransformer'
-import { isText } from 'domhandler/lib/node'
+import { isText } from 'domhandler'
 
 const expectSameHtml = function (html: string, options: ParserOptions = {}) {
   const actual = renderToStaticMarkup(

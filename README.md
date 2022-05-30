@@ -30,7 +30,7 @@ import convertHtmlToReact from '@hedgedoc/html-to-react';
 class HtmlComponent extends React.Component {
   render() {
     const html = '<div>Example HTML string</div>';
-    return <div>{ ReactHtmlParser(html) }</div>;
+    return <div>{ convertHtmlToReact (html, true) }</div>;
   }
 }
 ```

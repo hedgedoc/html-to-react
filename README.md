@@ -47,7 +47,7 @@ Whilst React has a [certain level of protection to injection attacks](https://re
 
 [Click here](https://codesandbox.io/s/reacthtmlparser-xss-examples-ijgiu?file=/src/App.js) to see these in action and how to protect yourself using [dompurify](https://www.npmjs.com/package/dompurify) in the browser.
 
-### Why doesn't ReactHTMLParser protect me automatically?
+### Why doesn't convertHtmlToReact protect me automatically?
 
 Including a sanitizer as part of the library means it is making decisions for you that may not be correct. It is up to you to decide what level of sanitization you need and to act accordingly. Some users may already be sanitizing on the server or others may have specialized requirements that cannot be covered by a generic implementation.
 

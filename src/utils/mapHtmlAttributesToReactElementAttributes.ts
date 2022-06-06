@@ -5,7 +5,7 @@
  */
 
 import booleanAttributes from '../dom/attributes/booleanAttributes'
-import { REACT_ATTRIBUTES } from '../dom/attributes/ReactAttributes'
+import reactAttributes from '../dom/attributes/reactAttributes'
 import { isValidTagOrAttributeName } from './isValidTagOrAttributeName'
 
 /**
@@ -39,7 +39,7 @@ export function mapHtmlAttributesToReactElementAttributes(
       const lowerCaseAttribute = attribute.toLowerCase()
 
       // format the attribute name
-      const name = REACT_ATTRIBUTES[lowerCaseAttribute] || attribute
+      const name = reactAttributes[lowerCaseAttribute] || attribute
 
       // add the parsed attribute value to the mapped attributes
       mappedAttributes[name] = getParsedAttributeValue(

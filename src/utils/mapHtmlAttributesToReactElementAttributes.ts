@@ -35,6 +35,12 @@ export function mapHtmlAttributesToReactElementAttributes(
   return Object.keys(attributes)
     .filter((attr) => isValidTagOrAttributeName(attr))
     .reduce((mappedAttributes, attribute) => {
+      // Don't pass through event handler attributes at all (on...)
+      // This is the same heuristic used by React:
+      // https://github.com/facebook/react/blob/7a5b8227c7/packages/react-dom/src/shared/ReactDOMUnknownPropertyHook.js#L23
+      if (attribute.startsWith('on')) {
+        return mappedAttributes
+      }
       // lowercase the attribute name and find it in the react attribute map
       const lowerCaseAttribute = attribute.toLowerCase()
 

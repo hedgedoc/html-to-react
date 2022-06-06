@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { BOOLEAN_ATTRIBUTES } from '../dom/attributes/BooleanAttributes'
+import booleanAttributes from '../dom/attributes/booleanAttributes'
 import { REACT_ATTRIBUTES } from '../dom/attributes/ReactAttributes'
 import { isValidTagOrAttributeName } from './isValidTagOrAttributeName'
 
 /**
  * Returns the parsed attribute value taking into account things like boolean attributes
  *
- * @param {String} attribute The name of the attribute
- * @param {*} value The value of the attribute from the HTML
- * @returns {*} The parsed attribute value
+ * @param {string} attribute The name of the attribute
+ * @param {string} value The value of the attribute from the HTML
+ * @returns {string} The parsed attribute value
  */
-const getParsedAttributeValue = function (attribute: string, value: string) {
-  if (BOOLEAN_ATTRIBUTES.indexOf(attribute.toLowerCase()) >= 0) {
+function getParsedAttributeValue(attribute: string, value: string): string {
+  if (booleanAttributes.has(attribute.toLowerCase())) {
     value = attribute
   }
   return value

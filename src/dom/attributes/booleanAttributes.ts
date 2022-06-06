@@ -12,21 +12,25 @@
  *      <input disabled="disabled"> = <input disabled>
  * @type {Array}
  */
-export const BOOLEAN_ATTRIBUTES: string[] = [
-  'allowfullScreen',
+const booleanAttributes: ReadonlySet<string> = new Set([
+  'allowfullscreen',
   'async',
+  'autofocus',
   'autoplay',
-  'capture',
   'checked',
   'controls',
   'default',
   'defer',
   'disabled',
+  'disablepictureinpicture',
+  'disableremoteplayback',
   'formnovalidate',
   'hidden',
+  'itemscope',
   'loop',
   'multiple',
   'muted',
+  'nomodule',
   'novalidate',
   'open',
   'playsinline',
@@ -35,6 +39,6 @@ export const BOOLEAN_ATTRIBUTES: string[] = [
   'reversed',
   'scoped',
   'seamless',
-  'selected',
-  'itemScope'
-]
+  'selected'
+])
+export default booleanAttributes

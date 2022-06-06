@@ -11,5 +11,8 @@ To regenerate, use `git log --format='%aN <%aE>' | LC_ALL=C.UTF-8 sort -uf`.
 
 # Authors
 
+- Aarni Koskela <akx@iki.fi>
+- Erik Michelson <github@erik.michelson.eu>
 - Tilman Vatteroth <git@tilmanvatteroth.de>
+
 

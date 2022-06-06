@@ -7,9 +7,9 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { convertHtmlToReact, ParserOptions } from '../../src/convertHtmlToReact'
 import { convertNodeToReactElement } from '../../src/convertNodeToReactElement'
-import { Document, isTag } from 'domhandler'
+import { Document, isTag, isText } from 'domhandler'
 import { NodeToReactElementTransformer } from '../../src/NodeToReactElementTransformer'
-import { isText } from 'domhandler'
+import { ReactElement } from 'react'
 
 const expectSameHtml = function (html: string, options: ParserOptions = {}) {
   const actual = renderToStaticMarkup(
@@ -97,6 +97,17 @@ describe('Integration tests: ', () => {
     expectOtherHtml('<input disabled>', '<input disabled=""/>')
     expectOtherHtml('<input disabled="">', '<input disabled=""/>')
     expectOtherHtml('<input disabled="disabled">', '<input disabled=""/>')
+  })
+  ;[
+    ['CONTENTEDITABLE', 'contentEditable'],
+    ['LABEL', 'label'],
+    ['iTemREF', 'itemRef']
+  ].forEach(([attr, prop]) => {
+    it(`should convert attribute ${attr} to prop ${prop}`, () => {
+      let nodes = convertHtmlToReact(`<div ${attr}/>`, {})
+      expect(nodes).toHaveLength(1)
+      expect((nodes[0]! as ReactElement).props).toHaveProperty(prop)
+    })
   })
 
   it('should decode html entities by default', () => {

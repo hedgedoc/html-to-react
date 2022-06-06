@@ -23,14 +23,14 @@ yarn add @hedgedoc/html-to-react
 
 ## Usage
 
-```javascript
+```typescript
 import React from 'react';
 import convertHtmlToReact from '@hedgedoc/html-to-react';
 
 class HtmlComponent extends React.Component {
   render() {
     const html = '<div>Example HTML string</div>';
-    return <div>{ ReactHtmlParser(html) }</div>;
+    return <div>{ convertHtmlToReact(html) }</div>;
   }
 }
 ```
@@ -47,7 +47,7 @@ Whilst React has a [certain level of protection to injection attacks](https://re
 
 [Click here](https://codesandbox.io/s/reacthtmlparser-xss-examples-ijgiu?file=/src/App.js) to see these in action and how to protect yourself using [dompurify](https://www.npmjs.com/package/dompurify) in the browser.
 
-### Why doesn't ReactHTMLParser protect me automatically?
+### Why doesn't `HTML to React` protect me automatically?
 
 Including a sanitizer as part of the library means it is making decisions for you that may not be correct. It is up to you to decide what level of sanitization you need and to act accordingly. Some users may already be sanitizing on the server or others may have specialized requirements that cannot be covered by a generic implementation.
 
@@ -119,25 +119,25 @@ Allows pre-processing the nodes generated from the html by `htmlparser2` before 
 ##### Return type
 The `preprocessNodes` function should return a valid `htmlparser2` node tree.
 
-### `function convertNodeToElement(node, index, transform)`
+### `function convertNodeToReactElement(node, index, transform)`
 Processes a node and returns the React element to be rendered. This function can be used in conjunction with the previously described `transform` function to continue to process a node after modifying it.
 
 #### Usage
-```js
-import { convertNodeToElement } from '@hedgedoc/html-to-react';
+```typescript
+import { convertNodeToReactElement } from '@hedgedoc/html-to-react';
 ```
 #### Arguments
 - `node`: The node to process
 - `index` (number): The index of the node in relation to it's parent
 - `transform`: The transform function as described above
 
-```js
-import { convertNodeToElement } from '@hedgedoc/html-to-react';
+```typescript
+import { convertNodeToReactElement } from '@hedgedoc/html-to-react';
 function transform(node, index) {
   // convert <ul> to <ol>
   if (node.type === 'tag' && node.name === 'ul') {
     node.name = 'ol';
-    return convertNodeToElement(node, index, transform);
+    return convertNodeToReactElement(node, index, transform);
   }
 }
 ```

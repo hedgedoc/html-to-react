@@ -17,7 +17,7 @@ export interface ParserOptions {
 }
 
 /**
- * Parses a HTML string and returns a list of React components generated from it
+ * Parses an HTML string and returns a list of React components generated from it
  *
  * @param {String} html The HTML to convert into React component
  * @param {Object} options Options to pass

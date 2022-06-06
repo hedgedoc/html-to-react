@@ -4,5 +4,5 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { convertHtmlToReact } from './convertHtmlToReact'
-export default convertHtmlToReact
+export { convertHtmlToReact as default } from './convertHtmlToReact'
+export { convertNodeToReactElement } from './convertNodeToReactElement'

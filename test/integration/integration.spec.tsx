@@ -77,7 +77,7 @@ describe('Integration tests: ', () => {
 
   it('should handle attributes', () => {
     expectSameHtml(
-      '<div class="test" id="test" aria-test="test" data-test="test">test</div>'
+      '<div class="test" id="test" aria-valuetext="test" data-test="test">test</div>'
     )
   })
 

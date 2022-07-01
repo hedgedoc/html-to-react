@@ -3,3 +3,6 @@ Upstream-Name: html-to-react
 Upstream-Contact: The HedgeDoc developers <license@hedgedoc.org>
 Source: https://github.com/hedgedoc/html-to-react
 
+Files: .github/pull_request_template.md
+Copyright: 2021 The HedgeDoc developers (see AUTHORS file)
+License: CC-BY-SA-4.0

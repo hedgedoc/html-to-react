@@ -6,3 +6,7 @@ Source: https://github.com/hedgedoc/html-to-react
 Files: .github/pull_request_template.md
 Copyright: 2021 The HedgeDoc developers (see AUTHORS file)
 License: CC-BY-SA-4.0
+
+Files: .yarn/**
+Copyright: Yarn contributors
+License: LicenseRef-yarn

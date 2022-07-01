@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
-name: lint
+name: Lint and check code style
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   lint:
@@ -20,50 +20,24 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
-      - name: Cache node_modules
-        uses: actions/cache@v3
+      - name: Cache yarn cache
+        uses: actions/cache@v3.0.4
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-16-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-18-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-yarn-18
 
       - name: Set up NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
+        run: yarn install --immutable
+
       - name: Lint code
         run: yarn lint
-  format:
-    runs-on: ubuntu-latest
-    name: Checks codestyle of all .ts and .tsx files
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-16-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Set up NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
-      - name: Lint code
-        run: yarn format

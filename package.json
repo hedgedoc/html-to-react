@@ -8,7 +8,7 @@
     "test": "jest",
     "build": "tsc",
     "prepublishOnly": "yarn format && yarn test && yarn build",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint src --ext .ts",
     "format": "prettier -c \"{src,test}/**/*.{ts,tsx,js}\"",
     "format:fix": "prettier -w \"{src,test}/**/*.{ts,tsx,js}\""
   },

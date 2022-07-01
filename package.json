@@ -8,7 +8,8 @@
     "test": "jest",
     "build": "tsc -p tsconfig.build.json",
     "prepublish": "rm -rf dist && yarn lint && yarn build && yarn test",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint --fix --ext .ts src"
   },
   "files": [
     "LICENSES/*",

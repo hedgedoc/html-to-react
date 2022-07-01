@@ -57,17 +57,6 @@
   "directories": {
     "test": "test"
   },
-  "prettier": {
-    "parser": "typescript",
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "semi": false,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "bracketSameLine": true,
-    "arrowParens": "always"
-  },
   "jest": {
     "transform": {
       ".(ts|tsx)": "ts-jest"

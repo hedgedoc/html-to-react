@@ -6,11 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc",
-    "prepublishOnly": "yarn format && yarn test && yarn build",
-    "lint": "eslint src --ext .ts",
-    "format": "prettier -c \"{src,test}/**/*.{ts,tsx,js}\"",
-    "format:fix": "prettier -w \"{src,test}/**/*.{ts,tsx,js}\""
+    "build": "tsc -p tsconfig.build.json",
+    "prepublish": "rm -rf dist && yarn lint && yarn build && yarn test",
+    "lint": "eslint src --ext .ts"
   },
   "files": [
     "LICENSES/*",
@@ -38,9 +36,9 @@
     "@types/react-dom": "18.0.5",
     "@typescript-eslint/eslint-plugin": "5.30.3",
     "@typescript-eslint/parser": "5.30.3",
-    "eslint-plugin-jest": "26.5.3",
     "eslint": "8.18.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-jest": "26.5.3",
     "eslint-plugin-prettier": "4.2.1",
     "jest": "28.1.2",
     "prettier": "2.7.1",

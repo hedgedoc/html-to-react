@@ -10,9 +10,7 @@
  * @param {String} inlineStyle='' The inline style to convert
  * @returns {Object} The converted style
  */
-export function convertInlineStyleToMap(
-  inlineStyle = ''
-): Record<string, string> {
+export function convertInlineStyleToMap(inlineStyle = ''): Record<string, string> {
   if (inlineStyle === '') {
     return {}
   }

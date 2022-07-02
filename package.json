@@ -6,11 +6,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc",
-    "prepublishOnly": "yarn format && yarn test && yarn build",
-    "lint": "eslint . --ext .ts",
-    "format": "prettier -c \"{src,test}/**/*.{ts,tsx,js}\"",
-    "format:fix": "prettier -w \"{src,test}/**/*.{ts,tsx,js}\""
+    "build": "tsc -p tsconfig.build.json",
+    "prepublish": "rm -rf dist && yarn lint && yarn build && yarn test",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint --fix --ext .ts src"
   },
   "files": [
     "LICENSES/*",
@@ -33,23 +32,25 @@
   "author": "The HedgeDoc Authors",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "@types/jest": "^28.0.0",
-    "@types/react": "^18.0",
-    "@types/react-dom": "^18.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "jest": "^28.0.0",
-    "prettier": "^2.3.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "ts-jest": "^28.0.0",
-    "typescript": "^4.3.2"
+    "@types/jest": "28.1.4",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "5.30.3",
+    "@typescript-eslint/parser": "5.30.3",
+    "eslint": "8.18.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-jest": "26.5.3",
+    "eslint-plugin-prettier": "4.2.1",
+    "jest": "28.1.2",
+    "prettier": "2.7.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "ts-jest": "28.0.5",
+    "typescript": "4.7.4"
   },
   "dependencies": {
-    "htmlparser2": "^8.0.0",
-    "domhandler": "^5.0.3"
+    "domhandler": "^5.0.3",
+    "htmlparser2": "^8.0.0"
   },
   "peerDependencies": {
     "react": ">=16.0"
@@ -57,29 +58,5 @@
   "directories": {
     "test": "test"
   },
-  "prettier": {
-    "parser": "typescript",
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "semi": false,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "bracketSameLine": true,
-    "arrowParens": "always"
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
-    "testPathIgnorePatterns": [
-      "/dist/"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
-  }
+  "packageManager": "yarn@3.2.1"
 }

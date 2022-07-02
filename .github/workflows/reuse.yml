@@ -1,10 +1,14 @@
-# SPDX-FileCopyrightText: 2020 The HedgeDoc developers (see AUTHORS file)
+# SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
 name: REUSE Compliance Check
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   reuse:

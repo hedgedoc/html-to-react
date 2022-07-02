@@ -17,10 +17,10 @@ export function generatePropsFromAttributes(
   attributes: Record<string, string>,
   key: string | number
 ): Record<string, string | Record<string, string>> {
-  const props = Object.assign(
-    { key },
-    mapHtmlAttributesToReactElementAttributes(attributes)
-  ) as Record<string, string | Record<string, string>>
+  const props = Object.assign({ key }, mapHtmlAttributesToReactElementAttributes(attributes)) as Record<
+    string,
+    string | Record<string, string>
+  >
 
   if (props.style) {
     if (typeof props.style === 'string') {

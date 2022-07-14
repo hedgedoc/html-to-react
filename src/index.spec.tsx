@@ -10,23 +10,16 @@ import { convertNodeToReactElement } from './convertNodeToReactElement'
 import { Document, isTag, isText } from 'domhandler'
 import { NodeToReactElementTransformer } from './NodeToReactElementTransformer'
 import { ReactElement } from 'react'
+import { describe, expect, it } from '@jest/globals'
 
 const expectSameHtml = function (html: string, options: ParserOptions = {}) {
-  const actual = renderToStaticMarkup(
-    <div>{convertHtmlToReact(html, options)}</div>
-  )
+  const actual = renderToStaticMarkup(<div>{convertHtmlToReact(html, options)}</div>)
   const expected = `<div>${html}</div>`
   expect(actual).toBe(expected)
 }
 
-const expectOtherHtml = function (
-  html: string,
-  override: string,
-  options: ParserOptions = {}
-) {
-  const actual = renderToStaticMarkup(
-    <div>{convertHtmlToReact(html, options)}</div>
-  )
+const expectOtherHtml = function (html: string, override: string, options: ParserOptions = {}) {
+  const actual = renderToStaticMarkup(<div>{convertHtmlToReact(html, options)}</div>)
   const expected = `<div>${override}</div>`
   expect(actual).toBe(expected)
 }
@@ -41,9 +34,7 @@ describe('Integration tests: ', () => {
   })
 
   it('should render nested elements', () => {
-    expectSameHtml(
-      '<div><span>test1</span><div><ul><li>test2</li><li>test3</li></ul></div></div>'
-    )
+    expectSameHtml('<div><span>test1</span><div><ul><li>test2</li><li>test3</li></ul></div></div>')
   })
 
   it('should handle bad html', () => {
@@ -58,10 +49,7 @@ describe('Integration tests: ', () => {
   })
 
   it('should ignore comments', () => {
-    expectOtherHtml(
-      '<div>test1</div><!-- comment --><div>test2</div>',
-      '<div>test1</div><div>test2</div>'
-    )
+    expectOtherHtml('<div>test1</div><!-- comment --><div>test2</div>', '<div>test1</div><div>test2</div>')
   })
 
   it('should ignore script tags', () => {
@@ -69,20 +57,15 @@ describe('Integration tests: ', () => {
   })
 
   it('should ignore event handlers', () => {
-    expectOtherHtml(
-      '<a href="#" onclick="alert(1)">test</a>',
-      '<a href="#">test</a>'
-    )
+    expectOtherHtml('<a href="#" onclick="alert(1)">test</a>', '<a href="#">test</a>')
   })
 
   it('should handle attributes', () => {
-    expectSameHtml(
-      '<div class="test" id="test" aria-valuetext="test" data-test="test">test</div>'
-    )
+    expectSameHtml('<div class="test" id="test" aria-valuetext="test" data-test="test">test</div>')
   })
 
   it('should handle inline styles', () => {
-    expectSameHtml(`<div style="border-radius:1px;background:red">test</div>`)
+    expectSameHtml('<div style="border-radius:1px;background:red">test</div>')
   })
 
   it('should ignore inline styles that are empty strings', () => {
@@ -104,9 +87,9 @@ describe('Integration tests: ', () => {
     ['iTemREF', 'itemRef']
   ].forEach(([attr, prop]) => {
     it(`should convert attribute ${attr} to prop ${prop}`, () => {
-      let nodes = convertHtmlToReact(`<div ${attr}/>`, {})
+      const nodes = convertHtmlToReact(`<div ${attr}/>`, {})
       expect(nodes).toHaveLength(1)
-      expect((nodes[0]! as ReactElement).props).toHaveProperty(prop)
+      expect((nodes[0] as ReactElement).props).toHaveProperty(prop)
     })
   })
 
@@ -122,44 +105,32 @@ describe('Integration tests: ', () => {
 
   describe('transform function', () => {
     it('should use the response when it is not undefined', () => {
-      expectOtherHtml(
-        '<span>test</span><div>another</div>',
-        '<p>transformed</p><p>transformed</p>',
-        {
-          transform(node, index) {
-            return <p key={index}>transformed</p>
-          }
+      expectOtherHtml('<span>test</span><div>another</div>', '<p>transformed</p><p>transformed</p>', {
+        transform(node, index) {
+          return <p key={index}>transformed</p>
         }
-      )
+      })
     })
 
     it('should not render elements and children when returning null', () => {
-      expectOtherHtml(
-        '<p>test<span>inner test<b>bold child</b></span></p>',
-        '<p>test</p>',
-        {
-          transform(node) {
-            if (isTag(node) && node.type === 'tag' && node.name === 'span') {
-              return null
-            }
+      expectOtherHtml('<p>test<span>inner test<b>bold child</b></span></p>', '<p>test</p>', {
+        transform(node) {
+          if (isTag(node) && node.type === 'tag' && node.name === 'span') {
+            return null
           }
         }
-      )
+      })
     })
 
     it('should allow modifying nodes', () => {
-      expectOtherHtml(
-        '<a href="/test">test link</a>',
-        '<a href="/changed">test link</a>',
-        {
-          transform(node, index) {
-            if (isTag(node)) {
-              node.attribs.href = '/changed'
-            }
-            return convertNodeToReactElement(node, index)
+      expectOtherHtml('<a href="/test">test link</a>', '<a href="/changed">test link</a>', {
+        transform(node, index) {
+          if (isTag(node)) {
+            node.attribs.href = '/changed'
           }
+          return convertNodeToReactElement(node, index)
         }
-      )
+      })
     })
 
     it('should allow passing the transform function down to children', () => {
@@ -190,21 +161,14 @@ describe('Integration tests: ', () => {
   })
 
   it('should not render invalid attributes', () => {
-    expectOtherHtml(
-      '<div test<="test" class="test">content</div>',
-      '<div class="test">content</div>'
-    )
+    expectOtherHtml('<div test<="test" class="test">content</div>', '<div class="test">content</div>')
   })
 
   it('should preprocess nodes correctly', () => {
-    expectOtherHtml(
-      '<div>preprocess test</div>',
-      '<div>preprocess test</div><div>preprocess test</div>',
-      {
-        preprocessNodes(document) {
-          return new Document([...document.childNodes, ...document.childNodes])
-        }
+    expectOtherHtml('<div>preprocess test</div>', '<div>preprocess test</div><div>preprocess test</div>', {
+      preprocessNodes(document) {
+        return new Document([...document.childNodes, ...document.childNodes])
       }
-    )
+    })
   })
 })

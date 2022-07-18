@@ -73,7 +73,7 @@ describe('Integration tests: ', () => {
   })
 
   it('should not allow nesting of void elements', () => {
-    expectOtherHtml('<img><p>test</p></img>', '<img/><p>test</p>')
+    expectOtherHtml('<input><p>test</p></input>', '<input/><p>test</p>')
   })
 
   it('should convert boolean attribute values', () => {
@@ -161,7 +161,7 @@ describe('Integration tests: ', () => {
   })
 
   it('should not render invalid attributes', () => {
-    expectOtherHtml('<div test<="test" class="test">content</div>', '<div class="test">content</div>')
+    expectOtherHtml('<div data-test<="test" class="test">content</div>', '<div class="test">content</div>')
   })
 
   it('should preprocess nodes correctly', () => {

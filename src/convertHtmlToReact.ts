@@ -23,15 +23,12 @@ export interface ParserOptions {
  * @param {Object} options Options to pass
  * @returns {Array} List of top level React elements
  */
-export function convertHtmlToReact(
-  html: string,
-  { decodeEntities, transform, preprocessNodes }: ParserOptions
-): (ReactElement | string | null)[] {
-  let parsedDocument = parseDocument(html, {
-    decodeEntities: decodeEntities ?? true
+export function convertHtmlToReact(html: string, options?: ParserOptions): (ReactElement | string | null)[] {
+  const parsedDocument = parseDocument(html, {
+    decodeEntities: options?.decodeEntities ?? true
   })
-  if (preprocessNodes) {
-    parsedDocument = preprocessNodes(parsedDocument)
-  }
-  return processNodes(parsedDocument.childNodes, transform)
+
+  const processedDocument = options?.preprocessNodes?.(parsedDocument) ?? parsedDocument
+
+  return processNodes(processedDocument.childNodes, options?.transform)
 }

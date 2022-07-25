@@ -36,10 +36,11 @@
     },
     {
       "groupName": "Jest",
-      "matchPackageNames": [
-        "jest",
-        "ts-jest",
-        "@types/jest"
+      "matchPackagePatterns": [
+        "^jest/",
+        "^ts-jest/",
+        "^@types\/jest/",
+        "^@jest"
       ]
     }
   ]

@@ -939,9 +939,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 18.7.6
-  resolution: "@types/node@npm:18.7.6"
-  checksum: 5122988c325eda8d1f5cbe4494916036aae1758f9d5bb2d8139a800b8bad1540fbb167cd3c759da9a5cb4600cd3507609ac7969747113c1549a3e4320a17b1a9
+  version: 18.7.9
+  resolution: "@types/node@npm:18.7.9"
+  checksum: 691ea1b734c0a39c4fe03c104fed18e0148bda6f2504dd341f84be8153d28e74d8114198d2d064ab7fdd2ece3ee16c60b78eea0101fb004f6e4595a631bc3839
   languageName: node
   linkType: hard
 
@@ -1482,9 +1482,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001370":
-  version: 1.0.30001378
-  resolution: "caniuse-lite@npm:1.0.30001378"
-  checksum: 19f1774da1f62d393ddde55dc091eb3e4f5c5b0ce43f9a9d20e75307a0f329cf8591c836a35a9f6f9fd7c27db7a75e0682245a194acec2e2ba1bc25ef1c3300c
+  version: 1.0.30001380
+  resolution: "caniuse-lite@npm:1.0.30001380"
+  checksum: a106a63dfc6f49271bff16820cda81ca87c0afa7bd0a7b542e31cec250bca8b4d29ec2daff5ac1e4d9ee58b9edef9ee6c1fb852ebd371a794f5c67d36184ede6
   languageName: node
   linkType: hard
 
@@ -1769,9 +1769,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.202":
-  version: 1.4.222
-  resolution: "electron-to-chromium@npm:1.4.222"
-  checksum: acae758e1cfb647cfaa7ac662200e3d2c15a66c50da999cac2c08e98908e61c276c4ef336e0f9d0f42d75b68f08cdc4efe6cb7b8031cfe5aed47645ebd07632c
+  version: 1.4.225
+  resolution: "electron-to-chromium@npm:1.4.225"
+  checksum: 54b5c5550e33ce5df1d2ab71543b9dc24e4dd55dc4650b29cc19b2911b932b072317e662ce3236c500a498ad69e90d2ceebe2433a772e53a337e97bd53cc7dc9
   languageName: node
   linkType: hard
 
@@ -2198,9 +2198,9 @@ __metadata:
   linkType: hard
 
 "flatted@npm:^3.1.0":
-  version: 3.2.6
-  resolution: "flatted@npm:3.2.6"
-  checksum: 33b87aa88dfa40ca6ee31d7df61712bbbad3d3c05c132c23e59b9b61d34631b337a18ff2b8dc5553acdc871ec72b741e485f78969cf006124a3f57174de29a0e
+  version: 3.2.7
+  resolution: "flatted@npm:3.2.7"
+  checksum: 427633049d55bdb80201c68f7eb1cbd533e03eac541f97d3aecab8c5526f12a20ccecaeede08b57503e772c769e7f8680b37e8d482d1e5f8d7e2194687f9ea35
   languageName: node
   linkType: hard
 
@@ -3394,8 +3394,8 @@ __metadata:
   linkType: hard
 
 "minipass-fetch@npm:^2.0.3":
-  version: 2.1.0
-  resolution: "minipass-fetch@npm:2.1.0"
+  version: 2.1.1
+  resolution: "minipass-fetch@npm:2.1.1"
   dependencies:
     encoding: ^0.1.13
     minipass: ^3.1.6
@@ -3404,7 +3404,7 @@ __metadata:
   dependenciesMeta:
     encoding:
       optional: true
-  checksum: 1334732859a3f7959ed22589bafd9c40384b885aebb5932328071c33f86b3eb181d54c86919675d1825ab5f1c8e4f328878c863873258d113c29d79a4b0c9c9f
+  checksum: 1aae0c2240b2f65309e046615e5a38cfd56a16ed2d334932aa195d183a0a2e1673a242a3b257bbb64892dee2e75d0233e8d2c3ad160928b6a2e5609efe6daad8
   languageName: node
   linkType: hard
 

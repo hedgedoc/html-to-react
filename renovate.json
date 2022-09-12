@@ -38,7 +38,7 @@
       "groupName": "Jest",
       "matchPackagePatterns": [
         "^jest/",
-        "^ts-jest/",
+        "^ts-jest",
         "^@types\/jest/",
         "^@jest"
       ]

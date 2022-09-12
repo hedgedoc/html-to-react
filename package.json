@@ -32,8 +32,8 @@
   "author": "The HedgeDoc Authors",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "@jest/globals": "29.0.2",
-    "@jest/types": "29.0.2",
+    "@jest/globals": "29.0.3",
+    "@jest/types": "29.0.3",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.36.2",

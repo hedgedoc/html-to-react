@@ -6,7 +6,10 @@
     ":prHourlyLimitNone",
     ":dependencyDashboard",
     ":maintainLockFilesWeekly",
-    "schedule:daily"
+  ],
+  "prHourlyLimit": 0,
+  "schedule": [
+    "on Saturday"
   ],
   "labels": [
     "dependencies"

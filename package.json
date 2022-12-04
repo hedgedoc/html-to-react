@@ -60,5 +60,8 @@
   "directories": {
     "test": "test"
   },
+  "resolutions": {
+    "@types/react": "18.0.26"
+  },
   "packageManager": "yarn@3.3.0"
 }

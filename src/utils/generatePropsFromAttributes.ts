@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { mapHtmlAttributesToReactElementAttributes } from './mapHtmlAttributesToReactElementAttributes'
-import { convertInlineStyleToMap } from './convertInlineStyleToMap'
+import { mapHtmlAttributesToReactElementAttributes } from './mapHtmlAttributesToReactElementAttributes.js'
+import { convertInlineStyleToMap } from './convertInlineStyleToMap.js'
 
 /**
  * Generates props for a React element from an object of HTML attributes

@@ -1,14 +1,25 @@
 {
-  "transform": {
-    ".(ts|tsx)": "ts-jest"
-  },
-  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
-  "testPathIgnorePatterns": [
+  "testRegex" : "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+  "testPathIgnorePatterns" : [
     "/dist/"
   ],
-  "moduleFileExtensions": [
+  "moduleFileExtensions" : [
     "ts",
     "tsx",
     "js"
-  ]
+  ],
+  "extensionsToTreatAsEsm" : [
+    ".ts"
+  ],
+  "moduleNameMapper" : {
+    "^(\\.{1,2}/.*)\\.js$" : "$1"
+  },
+  "transform" : {
+    "^.+\\.tsx?$" : [
+      "ts-jest",
+      {
+        "useESM" : true
+      }
+    ]
+  }
 }

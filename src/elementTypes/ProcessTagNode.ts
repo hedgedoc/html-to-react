@@ -5,12 +5,12 @@
  */
 
 import React, { ReactElement } from 'react'
-import { processNodes } from '../processNodes'
-import { generatePropsFromAttributes } from '../utils/generatePropsFromAttributes'
-import { isValidTagOrAttributeName } from '../utils/isValidTagOrAttributeName'
+import { processNodes } from '../processNodes.js'
+import { generatePropsFromAttributes } from '../utils/generatePropsFromAttributes.js'
+import { isValidTagOrAttributeName } from '../utils/isValidTagOrAttributeName.js'
 import { isTag, Node } from 'domhandler'
-import { VOID_ELEMENTS } from '../dom/elements/VoidElements'
-import { NodeToReactElementTransformer } from '../NodeToReactElementTransformer'
+import { VOID_ELEMENTS } from '../dom/elements/VoidElements.js'
+import { NodeToReactElementTransformer } from '../NodeToReactElementTransformer.js'
 
 /**
  * Converts any element (excluding style - see StyleElementType - and script) to a react element.

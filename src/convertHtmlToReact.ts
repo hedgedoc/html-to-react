@@ -5,10 +5,10 @@
  */
 
 import { parseDocument } from 'htmlparser2'
-import { processNodes } from './processNodes'
+import { processNodes } from './processNodes.js'
 import { ReactElement } from 'react'
 import { Document } from 'domhandler'
-import { NodeToReactElementTransformer } from './NodeToReactElementTransformer'
+import { NodeToReactElementTransformer } from './NodeToReactElementTransformer.js'
 
 export interface ParserOptions {
   decodeEntities?: boolean

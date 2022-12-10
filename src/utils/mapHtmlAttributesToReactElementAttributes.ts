@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import booleanAttributes from '../dom/attributes/booleanAttributes'
-import reactAttributes from '../dom/attributes/reactAttributes'
-import { isValidTagOrAttributeName } from './isValidTagOrAttributeName'
+import booleanAttributes from '../dom/attributes/booleanAttributes.js'
+import reactAttributes from '../dom/attributes/reactAttributes.js'
+import { isValidTagOrAttributeName } from './isValidTagOrAttributeName.js'
 
 /**
  * Returns the parsed attribute value taking into account things like boolean attributes

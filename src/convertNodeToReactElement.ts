@@ -7,10 +7,10 @@
 import { ReactElement } from 'react'
 import { Node } from 'domhandler'
 import { ElementType } from 'domelementtype'
-import { processTextNode } from './elementTypes/ProcessTextNode'
-import { processTagNode } from './elementTypes/ProcessTagNode'
-import { processStyleNode } from './elementTypes/ProcessStyleNode'
-import { NodeToReactElementTransformer } from './NodeToReactElementTransformer'
+import { processTextNode } from './elementTypes/ProcessTextNode.js'
+import { processTagNode } from './elementTypes/ProcessTagNode.js'
+import { processStyleNode } from './elementTypes/ProcessStyleNode.js'
+import { NodeToReactElementTransformer } from './NodeToReactElementTransformer.js'
 
 /**
  * Converts a htmlparser2 node to a React element

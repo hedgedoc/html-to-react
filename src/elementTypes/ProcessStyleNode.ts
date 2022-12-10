@@ -5,7 +5,7 @@
  */
 
 import React, { ReactElement } from 'react'
-import { generatePropsFromAttributes } from '../utils/generatePropsFromAttributes'
+import { generatePropsFromAttributes } from '../utils/generatePropsFromAttributes.js'
 import { isText } from 'domhandler'
 import { isTag, Node } from 'domhandler'
 

@@ -61,7 +61,7 @@
     "test": "test"
   },
   "resolutions": {
-    "@types/react": "18.0.26"
+    "@types/react": "18.0.28"
   },
   "packageManager": "yarn@3.3.1"
 }

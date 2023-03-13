@@ -5,7 +5,7 @@
     ":preserveSemverRanges",
     ":prHourlyLimitNone",
     ":dependencyDashboard",
-    ":maintainLockFilesWeekly",
+    ":maintainLockFilesWeekly"
   ],
   "prHourlyLimit": 0,
   "schedule": [

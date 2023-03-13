@@ -5,7 +5,7 @@
  */
 import * as htmlparser2 from 'htmlparser2'
 
-export { convertHtmlToReact as default } from './convertHtmlToReact'
+export { convertHtmlToReact as default, ParserOptions } from './convertHtmlToReact'
 export { convertNodeToReactElement } from './convertNodeToReactElement'
 export type { NodeToReactElementTransformer } from './NodeToReactElementTransformer'
 export { processNodes } from './processNodes'

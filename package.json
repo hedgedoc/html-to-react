@@ -69,6 +69,12 @@
   "directories": {
     "test": "test"
   },
+  "browserslist": [
+    "node> 12"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
   "resolutions": {
     "@types/react": "18.2.6"
   },

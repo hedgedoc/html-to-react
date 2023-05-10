@@ -25,7 +25,7 @@ yarn add @hedgedoc/html-to-react
 
 ```typescript
 import React from 'react';
-import convertHtmlToReact from '@hedgedoc/html-to-react';
+import { convertHtmlToReact } from '@hedgedoc/html-to-react';
 
 class HtmlComponent extends React.Component {
   render() {
@@ -60,7 +60,7 @@ Takes an HTML string and returns equivalent React elements
 
 #### Usage
 ```js
-import convertHtmlToReact from '@hedgedoc/html-to-react';
+import { convertHtmlToReact } from '@hedgedoc/html-to-react';
 ```
 #### Arguments
 - `html`: The HTML string to parse

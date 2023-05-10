@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-export { convertHtmlToReact as default, ParserOptions } from './convertHtmlToReact'
+export { convertHtmlToReact, ParserOptions } from './convertHtmlToReact'
 export { convertNodeToReactElement } from './convertNodeToReactElement'
 export type { NodeToReactElementTransformer } from './NodeToReactElementTransformer'
 export { processNodes } from './processNodes'

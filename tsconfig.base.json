@@ -1,24 +1,21 @@
 {
   "compilerOptions": {
-    "target": "esnext",
     "removeComments": true,
     "preserveConstEnums": true,
     "lib": [
-      "es2020",
+      "es2022",
       "dom"
     ],
     "declaration": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "outDir": "dist/",
-    "rootDir": "./src",
     "allowJs": true,
     "sourceMap": true,
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["dist"]
 }

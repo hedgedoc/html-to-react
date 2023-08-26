@@ -10,6 +10,8 @@ This is a library that renders HTML strings into [React](https://facebook.github
 
 This library is a hard fork of https://github.com/peternewnham/react-html-parser. It has some improvements and is converted to typescript.
 
+⚠️⚠️ This repository is deprecated. It has been merged into the [main HedgeDoc repository](https://github.com/hedgedoc/hedgedoc) ⚠️⚠️
+
 [![npm](https://img.shields.io/npm/v/@hedgedoc/html-to-react.svg)](https://www.npmjs.com/package/@hedgedoc/html-to-react)
 [![Downloads](https://img.shields.io/npm/dw/@hedgedoc/html-to-react.svg)](https://www.npmjs.com/package/@hedgedoc/html-to-react)
 
